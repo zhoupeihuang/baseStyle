@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/main.css" />
+		<style>
+			.el-table .warning-row {
+				background: oldlace;
+			}
+			
+			.el-table .success-row {
+				background: #f0f9eb;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="app" style="background-color: #ecf0f5;">
+			<div class="maxBox cf">
+				<br />
+				  <el-tabs :tab-position="tabPosition" type="border-card" style="height: 200px;">
+				    <el-tab-pane label="用户管理">用户管理</el-tab-pane>
+				    <el-tab-pane label="配置管理">配置管理</el-tab-pane>
+				    <el-tab-pane label="角色管理">角色管理</el-tab-pane>
+				    <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
+				  </el-tabs>
+				 
+				<br />
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>1、审批操作按钮</legend>
+				</fieldset>
+				<div>
+					<el-button class="lay-btn layui-btn-normal">提交</el-button>
+					<el-button class="lay-btn layui-btn-normal">通过</el-button>
+					<el-button class="lay-btn layui-btn-primary">加急通过</el-button>
+					<el-button class="lay-btn">回退</el-button>
+					<el-button class="lay-btn">补件</el-button>
+					<el-button class="lay-btn layui-btn-warm">欺诈调查</el-button>
+					<el-button class="lay-btn layui-btn-danger">拒绝</el-button>
+					<el-button class="lay-btn layui-btn-no">取消</el-button>
+					<el-button class="lay-btn layui-btn-disabled">禁用</el-button>
+				</div>
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>1、其他查看类按钮</legend>
+				</fieldset>
+				<div>
+					<el-button class="lay-btn layui-btn-otherSystem">回退</el-button>
+					<el-button class="lay-btn layui-btn-otherSystem">补件</el-button>
+				</div>
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>1、其他查看类按钮</legend>
+				</fieldset>
+				<div>
+					<el-button class="lay-btn layui-btn-search">回退</el-button>
+					<el-button class="lay-btn layui-btn-search">补件</el-button>
+				</div>
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>2、订单标识</legend>
+				</fieldset>
+				<div>
+					<el-tag id="a" class="lay-tag">补</el-tag> <label for="a">表示补件订单</label><br />
+					<el-tag id="b" class="lay-tag lay-tag-warm">急</el-tag> <label for="b">表示加急订单</label><br />
+					<el-tag id="c" class="lay-tag lay-tag-danger">展</el-tag> <label for="c">表示车贷展期订单</label><br />
+					<el-tag id="d" class="lay-tag lay-tag-normal">绿</el-tag> <label for="d">表示消金绿通订单</label><br />
+					<el-tag id="e" class="lay-tag lay-tag-primary">追</el-tag> <label for="e">表示追加贷款订单</label><br />
+					<el-tag id="f" class="lay-tag lay-tag-again">再</el-tag> <label for="f">表示结清再贷订单</label><br />
+					<el-tag id="g" class="lay-tag lay-tag-no">旧</el-tag> <label for="g">表示借新还旧订单</label><br />
+
+					<el-tag id="h" class="lay-tag lay-tag-cheat">欺</el-tag> <label for="h">表示欺诈</label><br />
+					<el-tag id="i" class="lay-tag lay-tag-site">实</el-tag> <label for="i">表示实地</label><br />
+
+				</div>
+
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>3、表单</legend>
+				</fieldset>
+				<div>
+					<el-input class="lay-input" placeholder="请输入内容"></el-input>
+					<br><br>
+					<el-input class="lay-input lay-input-normal" placeholder="请输入内容"></el-input>
+					<br><br>
+					<el-input class="lay-input lay-input-normal lay-input-success" placeholder="请输入内容"></el-input>
+					<br><br>
+					<el-input class="lay-input lay-input-normal lay-input-error" placeholder="请输入错误内容"></el-input>
+					<br><br>
+					<template>
+						<el-select  class="lay-select" v-model="value" placeholder="请选择">
+							<el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+							</el-option>
+						</el-select>
+					</template>
+					<br><br>
+					<template>
+						<el-radio class="lay-radio-input" v-model="radio" label="1">备选项</el-radio>
+						<el-radio class="lay-radio-input" v-model="radio" label="2">备选项</el-radio>
+					</template>
+					<br><br>
+					<template>
+						<el-checkbox-group class="lay-checkbox-input" v-model="checkList">
+							<el-checkbox label="复选框 A"></el-checkbox>
+							<el-checkbox label="复选框 B"></el-checkbox>
+							<el-checkbox label="复选框 C"></el-checkbox>
+							<el-checkbox label="禁用" disabled></el-checkbox>
+							<el-checkbox label="选中且禁用" disabled></el-checkbox>
+						</el-checkbox-group>
+					</template>
+					<br><br>
+
+					<template>
+						<div class="block">
+							<el-date-picker v-model="value1" type="date" placeholder="请选择日期">
+							</el-date-picker>
+						</div>
+					</template>
+					<br><br>
+					<template>
+						<el-time-picker v-model="value2" placeholder="请选择时间">
+						</el-time-picker>
+						<el-time-picker arrow-control v-model="value3" placeholder="请选择时间">
+						</el-time-picker>
+					</template>
+				</div>
+
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>4、提示</legend>
+				</fieldset>
+				<template>
+					<el-button :plain="true" @click="open">消息</el-button>
+					<el-button :plain="true" @click="open2">可关闭提示</el-button>
+					<el-button :plain="true" @click="openCenter">文字居中</el-button>
+					<el-button :plain="true" @click="openHTML">使用 HTML 片段</el-button>
+				</template>
+
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>5、表格</legend>
+				</fieldset>
+				<template>
+					<el-table :data="tableData"  stripe border height="250" :row-class-name="tableRowClassName" style="width: 100%">
+
+						<el-table-column prop="date" label="日期" width="280">
+						</el-table-column>
+
+						<el-table-column prop="name" label="姓名" width="280">
+						</el-table-column>
+
+						<el-table-column prop="address" label="地址" width="580">
+						</el-table-column>
+
+						<el-table-column fixed="right" label="操作">
+							<template slot-scope="scope">
+								<el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+								<el-button type="text" size="small">编辑</el-button>
+							</template>
+						</el-table-column>
+					</el-table>
+				</template>
+
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>6、开关</legend>
+				</fieldset>
+				<el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
+				</el-switch>
+
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					<legend>7、弹框</legend>
+				</fieldset>
+				<template>
+					<el-button type="text" @click="open2_2">点击打开 Message Box</el-button>
+				</template>
+
+				<h6></h6>
+				<template>
+					<el-button type="text" @click="open2_1">点击打开 Message Box</el-button>
+				</template>
+			</div>
+		</div>
+	</body>
+	<!-- 先引入 Vue -->
+	<script src="js/vue.js"></script>
+	<!-- 引入组件库 -->
+	<script src="js/element-ui.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				tabPosition: 'top',
+				options: [{
+					value: '选项1',
+					label: '黄金糕'
+				}, {
+					value: '选项2',
+					label: '双皮奶'
+				}, {
+					value: '选项3',
+					label: '蚵仔煎'
+				}, {
+					value: '选项4',
+					label: '龙须面'
+				}, {
+					value: '选项5',
+					label: '北京烤鸭'
+				}],
+				value: '',
+				radio: '2',
+				checkList: ['选中且禁用', '复选框 A'],
+				value1: '',
+				value2: '',
+				value3: '',
+
+				tableData: [{
+					date: '2016-05-02',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1518 弄'
+				}, {
+					date: '2016-05-04',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1517 弄'
+				}, {
+					date: '2016-05-01',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1519 弄'
+				}, {
+					date: '2016-05-04',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1517 弄'
+				}, {
+					date: '2016-05-01',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1519 弄'
+				}, {
+					date: '2016-05-04',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1517 弄'
+				}, {
+					date: '2016-05-01',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1519 弄'
+				}, {
+					date: '2016-05-04',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1517 弄'
+				}, {
+					date: '2016-05-01',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1519 弄'
+				}, {
+					date: '2016-05-03',
+					name: '王小虎',
+					address: '上海市普陀区金沙江路 1516 弄'
+				}]
+			},
+			methods: {
+				open: function() {
+					this.$message('这是一条消息提示');
+				},
+				open2: function() {
+					this.$message({
+						showClose: true,
+						message: '这是一条可关闭的消息提示',
+						type: 'success'
+					});
+				},
+				openCenter: function() {
+					this.$message({
+						message: '居中的文字',
+						center: true
+					});
+				},
+				openHTML: function() {
+					this.$message({
+						dangerouslyUseHTMLString: true,
+						message: '<strong>这是 <i>HTML</i> 片段</strong>'
+					});
+				},
+				tableRowClassName: function(row, rowIndex) {
+					if(rowIndex === 1) {
+						return 'warning-row';
+					} else if(rowIndex === 3) {
+						return 'success-row';
+					}
+					return '';
+				},
+				handleClick: function(row) {
+					console.log(row);
+				},
+				open2_1: function() {
+					this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
+						dangerouslyUseHTMLString: true
+					});
+				},
+				open2_2: function() {
+					this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+						confirmButtonText: '确定',
+						cancelButtonText: '删除',
+						lockScroll:true,
+//						type: 'warning',
+						customClass:'lay-message-box',
+//						center: true
+					}).then(() => {
+						this.$message({
+							type: 'success',
+							message: '删除成功!'
+						});
+					}).catch(() => {
+						this.$message({
+							type: 'info',
+							message: '已取消删除'
+						});
+					});
+				}
+			}
+		})
+	</script>
+
+</html>

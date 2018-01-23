@@ -1,0 +1,411 @@
+.toolbar-fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	color: #3E3E3E;
+	background-color: #FFFFFF;
+	left: 0;
+	text-align: left;
+	width: 100%;
+	z-index: 10000;
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + 
+		documentElement.clientHeight-this.offsetHeight);
+	overflow: visible;
+}
+
+/***-------------------------------------------------------万能分割线-----------------------------------------------------------**/
+.bgColor {
+	background-color: #ecf0f5;
+}
+.m-left10{
+	margin-left: 10px;
+}
+.m-left15{
+	margin-left: 15px;
+}
+.m-left25{
+	margin-left: 25px;
+}
+.lay-date-input  .el-input__inner{
+	padding-left: 32px;
+}
+hr {
+	background-color: #e6e6e6;
+	height: 1px;
+	margin: 10px 0;
+	border: 0;
+	clear: both;
+}
+
+.maxBox {
+	width: 90%;
+	min-height: 120px;
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑", arial;
+	font: normal;
+	font-size: 14px;
+}
+
+.cf:after {
+	content: "";
+	clear: both;
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+
+.cf {
+	zoom: 1;
+}
+
+/*默认按钮样式*/
+.lay-btn {
+	/*默认按钮样式 深蓝色*/
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 18px;
+	background-color: #3C8DBC;
+	color: #fff;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-indent: 0;
+}
+
+.layui-btn-primary {
+	/*加急 通过 亮蓝色*/
+	background-color: #00c0ef;
+}
+
+.layui-btn-normal {
+	/*正常，成功 绿色*/
+	background-color: #00a65a;
+}
+
+.layui-btn-danger {
+	/*拒绝 红色*/
+	background-color: #dd4b39;
+}
+
+.layui-btn-warm {
+	/*警告，高危 黄色*/
+	background-color: #f39c12;
+}
+
+.layui-btn-disabled {
+	/*禁用*/
+	border: 1px solid #e6e6e6;
+	background-color: #FBFBFB;
+	color: #C9C9C9;
+	cursor: not-allowed;
+}
+
+.layui-btn-no {
+	/*取消 墨蓝*/
+	background-color: #001f3f;
+}
+
+/*----其他查看类按钮-----*/
+.layui-btn-otherSystem {
+	/*灰底灰边黑字按钮*/
+	border: 1px solid #d2d2d2;
+	background-color: #f4f4f4;
+	color: #333;
+}
+
+/*----其他查看类按钮-----*/
+.layui-btn-search {
+	/*白底蓝边蓝字按钮*/
+	border: 1px solid #3c8dbc;
+	background-color: #FFF;
+	color: #3C8DBC;
+}
+
+/* 状态消息 */
+.layui-elem-field {
+	margin: 10px 0 20px;
+	border-width: 1px 0 0;
+	margin-bottom: 10px;
+	padding: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cecece;
+}
+
+.layui-field-title {
+	margin: 10px 0 20px;
+	border-width: 1px 0 0;
+}
+
+.layui-field-box {
+	padding: 10px 15px;
+}
+
+.layui-elem-field legend {
+	margin-left: 20px;
+	padding: 0 10px;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+/*置顶信息*/
+.box {
+	position: relative;
+	border-radius: 3px;
+	background: #ffffff;
+	border-top: 3px solid #3C8DBC;
+	margin-bottom: 20px;
+	width: 100%;
+	min-height: 120px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.box-header {
+	color: #444;
+	display: block;
+	padding: 10px;
+	position: relative;
+}
+
+.box-body {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	padding: 10px;
+}
+
+.hr {
+	background-color: #e6e6e6;
+	height: 1px;
+	margin: 10px 0;
+	border: 0;
+	clear: both;
+}
+
+.with-border {
+	border-bottom: 1px solid #f4f4f4;
+}
+
+.layui-elem-quote {
+	margin-bottom: 10px;
+	padding: 7px 7px 7px 20px;
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	border-left: 5px solid #009688;
+	border-radius: 0 2px 2px 0;
+	background-color: #f2f2f2;
+}
+
+.boldTitle, .normalTitle {
+	display: inline-block;
+	width: 100%;
+	min-height: 10px;
+}
+
+.boldTitle li {
+	float: left;
+	list-style: none;
+	padding: 10px 15px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+}
+
+.normalTitle li {
+	float: left;
+	list-style: none;
+	margin: 10px 15px;
+	padding: 0 24px 0 0;
+	font-size: 14px;
+	color: #000;
+	border-right: 1px #ccc solid;
+	/*font-weight: bold;*/
+}
+
+.normalTitle li:last-child {
+	border-right: none;
+}
+
+.normalTitle li span {
+	color: #666;
+}
+
+/*-----tag-----*/
+.lay-tag {
+	background-color: #3C8DBC;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+	line-height: 19px;
+	font-size: 12px;
+	color: #fff;
+	border-radius: 4px;
+	text-align: center;
+	box-sizing: border-box;
+	border: none;
+	margin: 2px 4px;
+}
+
+.lay-tag-warm {
+	background-color: #F39C12;
+}
+
+.lay-tag-danger {
+	background-color: #d81b60;
+}
+
+.lay-tag-normal {
+	background-color: #00A65A;
+}
+
+.lay-tag-primary {
+	background-color: #00C0EF;
+}
+
+.lay-tag-again {
+	background-color: #605ca8;
+}
+
+.lay-tag-no {
+	background-color: #001f3f;
+}
+.lay-tag-cheat{
+	border:1px solid #dd4b39;
+	background-color: transparent;
+	color: #dd4b39;
+}
+.lay-tag-site{
+	border:1px solid #64890a;
+	background-color: transparent;
+	color: #64890a;
+}
+
+/*----表单元素-----*/
+.lay-input{
+	    margin-top: -4px;
+}
+.lay-input .el-input__inner {
+	-webkit-appearance: none;
+	background-color: #fff;
+	background-image: none;
+	border-radius: 2px;
+	border: 1px solid #dcdfe6;
+	box-sizing: border-box;
+	color: #606266;
+	display: inline-block;
+	font-size: inherit;
+	height: 32px;
+	line-height: 1;
+	outline: none;
+	padding: 0 15px;
+	transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+	width: 100%;
+	margin: 4px;
+}
+
+.lay-input-normal .el-input__inner {
+	width: 250px;
+}
+
+.el-input .el-input__inner:hover {
+	border-color: #3C8DBC
+}
+
+.lay-input-error .el-input__inner {
+	border-color: #DD4B39
+}
+
+.lay-input-success .el-input__inner {
+	border-color: #3C8DBC
+}
+
+.lay-select .el-input__inner {
+	-webkit-appearance: none;
+	background-color: #fff;
+	border-radius: 2px;
+	border: 1px solid #dcdfe6;
+	box-sizing: border-box;
+	color: #606266;
+	display: inline-block;
+	font-size: inherit;
+	height: 32px;
+	line-height: 1;
+	outline: 0;
+	padding: 0 15px;
+	-webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+	transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+	width: 250px;
+}
+
+.lay-radio-input .is-checked  .el-radio__inner {
+	border-color: #00C0EF;
+	background: #00C0EF;
+}
+
+.lay-radio-input .el-radio__label, .lay-radio-input .is-checked .el-radio__label
+	{
+	color: #999 !important;
+}
+
+.lay-checkbox-input  .is-checked  .el-checkbox__inner {
+	border-color: #00C0EF;
+	background: #00C0EF;
+}
+
+.lay-checkbox-input .el-checkbox__label, .lay-checkbox-input  .is-checked .el-checkbox__label
+	{
+	color: #999 !important;
+}
+
+.lay-message-box {
+	
+}
+/*错误信息*/
+.lay-error .el-form-item__error{
+	top: 10px;
+	min-width: 120px;
+}
+/*弹出层内的表单*/
+.el-dialog__body .el-form,.el-dialog__body  .el-form-item__label{
+	color:white;
+}
+.el-dialog__footer{
+	text-align: center;
+}
+.lay-dialogs .el-dialog{
+	min-width:322px;
+	max-width:400px;
+}
+/*字典分组排序的样式*/
+.orderBy{
+	background-color: #dd4b39;
+    min-width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: left;
+    margin: 2px;
+    cursor: all-scroll;
+    border-radius: 4px;
+    color: white;
+    text-indent: 10px;
+    font-size: 12px;
+}
+.imageListBox{
+	width:98% !important;
+}
+.imageListBox table th,.imageListBox table td{
+	text-align: left !important;
+}

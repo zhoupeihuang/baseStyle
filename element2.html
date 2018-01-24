@@ -21,7 +21,12 @@
 	<body>
 		<div id="app" style="background-color: #ecf0f5;">
 			<div class="maxBox cf">
-
+					<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+							<legend>6、开关</legend>
+						</fieldset>
+						<el-switch v-model="value2"  active-text="打开"
+						inactive-text="关闭">
+						</el-switch>	
 				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
 					<legend>7、弹框</legend>
 				</fieldset>
@@ -59,6 +64,7 @@
 			data: {
 				dialogTableVisible: false,
 				dialogFormVisible: false,
+				value2:true,
 				form: {
 					name: '',
 					region: '',

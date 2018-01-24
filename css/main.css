@@ -292,7 +292,11 @@ hr {
 	background-color: transparent;
 	color: #64890a;
 }
-
+.lay-tag-update{
+	border:1px solid #ff6586;
+	background-color: transparent;
+	color: #ff6586;
+}
 /*----表单元素-----*/
 .lay-input{
 	    margin-top: -4px;

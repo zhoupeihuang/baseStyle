@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/main.css" />
+	<style>
+		.el-table .warning-row {
+			background: oldlace;
+		}
+
+		.el-table .success-row {
+			background: #f0f9eb;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="app" style="background-color: #ecf0f5;">
+		<div class="maxBox cf">
+
+
+			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+				<legend>5、表格</legend>
+			</fieldset>
+			<blockquote class="layui-elem-quote">联系人列表</blockquote><br>
+				<el-table :data="tableData" stripe border :row-class-name="tableRowClassName" style="width: 100%">
+					<el-table-column prop="name" label="第一联系人姓名">
+					</el-table-column>
+					<el-table-column prop="relation" label="第一联系人关系">
+					</el-table-column>
+					<el-table-column prop="phoneNumber" label="第一联系电话">
+					</el-table-column>
+					<el-table-column prop="date" label="获息日期">
+					</el-table-column>
+				</el-table>
+				<br>		
+			<blockquote class="layui-elem-quote">贷款交易概要</blockquote><br>
+				<el-table :data="loadOutline" stripe border :row-class-name="tableRowClassName" style="width: 100%">
+					<el-table-column fixed="left" prop="title" label="标题">
+					</el-table-column>
+					<el-table-column fixed="left" prop="value" label="内容">
+					</el-table-column>
+				</el-table>
+			<br>
+			<blockquote class="layui-elem-quote">贷款交易概要2</blockquote><br>
+			<table class="mytable" border="1" cellspacing="0" cellpadding="0" style="width: 100%">
+					<tr v-for="(item,index) in loadOutline ">
+						<td class="el-table--border">{{item.title}}</td>
+						<td>{{item.value}}</td>
+					</tr>
+			</table>
+		</div>
+
+	</div>
+</body>
+<style>
+	.mytable {
+		border-collapse: separate;
+		border-width: 1px;
+		border-color: #ebeef5;
+		border-style: solid;
+		border-right: #ebeef5 0px solid;
+		border-top: #ebeef5 1px solid;
+		border-left: #ebeef5 1px solid;
+		border-bottom: #ebeef5 0px solid;
+	}
+
+	.mytable tr {
+		background-color: white;
+	}
+
+	.mytable tr td {
+		font-size: 14px;
+		text-align: left;
+		padding-left: 9px;
+		font-weight: normal;
+		line-height: 16px;
+		height: 24px;
+		color: #606266;
+		border-right: #ebeef5 1px solid;
+		border-top: #ebeef5 0px solid;
+		border-left: #ebeef5 0px solid;
+		border-bottom: #ebeef5 1px solid;
+	}
+	.mytable tr:nth-child(even){
+		background-color: #f9f9f9
+	}
+	.mytable tr td:nth-child(odd){
+		color:#333;
+		font-weight: bold
+	}
+</style>
+<!-- 先引入 Vue -->
+<script src="js/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="js/element-ui.js"></script>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			tableData: [{
+				date: '2016-05-02',
+				name: '徐龙辉',
+				phoneNumber: '1585921XXXX',
+				relation: '配偶'
+			}, {
+				date: '2016-05-04',
+				name: '杨苏',
+				phoneNumber: '1585921XXXX',
+				relation: '父母(女)'
+			}, {
+				date: '2016-05-01',
+				name: '龙志兰',
+				phoneNumber: '1585921XXXX',
+				relation: '其他'
+			}, {
+				date: '2016-05-04',
+				name: '刘洋',
+				phoneNumber: '1585921XXXX',
+				relation: '同事'
+			}],
+			loadOutline: [{
+				title: '贷款笔数',
+				value: '2'
+			}, {
+				title: '首贷日',
+				value: '2016.05.10'
+			}, {
+				title: '最大授信额度',
+				value: '51200'
+			}, {
+				title: '贷款总额',
+				value: '61200'
+			}, {
+				title: '贷款余额',
+				value: '51912'
+			}, {
+				title: '协定月还款',
+				value: '2596'
+			}, {
+				title: '当前逾期总额',
+				value: '0'
+			}, {
+				title: '最高逾期金额',
+				value: '0'
+			}, {
+				title: '最高逾期期数',
+				value: '0'
+			}]
+		},
+		methods: {
+			tableRowClassName: function (row, rowIndex) {
+				if (rowIndex === 1) {
+					return 'warning-row';
+				} else if (rowIndex === 3) {
+					return 'success-row';
+				}
+				return '';
+			}
+		}
+	})
+</script>
+
+</html>

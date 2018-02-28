@@ -1,4 +1,4 @@
-.toolbar-fixed-bottom {
+/* .toolbar-fixed-bottom {
 	position: fixed;
 	bottom: 0;
 	color: #3E3E3E;
@@ -11,7 +11,7 @@
 	_top: expression(documentElement.scrollTop + 
 		documentElement.clientHeight-this.offsetHeight);
 	overflow: visible;
-}
+} */
 
 /***-------------------------------------------------------万能分割线-----------------------------------------------------------**/
 .bgColor {
@@ -216,7 +216,7 @@ hr {
 }
 
 .boldTitle li {
-	float: left;
+	float: right;
 	list-style: none;
 	padding: 10px 15px;
 	font-size: 16px;

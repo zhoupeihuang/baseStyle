@@ -6,6 +6,7 @@
 	<!-- 引入样式 -->
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/main.css" />
+	<title>s</title>
 	<style>
 		.el-table .warning-row {
 			background: oldlace;
@@ -21,12 +22,26 @@
 <body>
 	<div id="app" style="background-color: #ecf0f5;">
 		<div class="maxBox cf">
-
-
-			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-				<legend>5、表格</legend>
-			</fieldset>
-			<blockquote class="layui-elem-quote">联系人列表</blockquote><br>
+			<div class="whiteBG">
+				<div class="bigTitle">同盾贷前审查报告</div>
+				<div class="suggestBox">扫描建议：88 分， 申请用户检测出高危风险，建议
+					<span class="errFont">拒绝</span> 共发现 1 条异常信息</div>
+				<div class="numberList">
+					<dl>
+						<dt>审核报告编号</dt>
+						<dd>ER2017122020370429371889</dd>
+					</dl>
+					<dl>
+						<dt>申请编号</dt>
+						<dd>171220203704342D8BD06218CC9670C7</dd>
+					</dl>
+					<dl>
+						<dt>报告生成时间</dt>
+						<dd>2017-12-20 20:37:04</dd>
+					</dl>
+				</div>
+				<blockquote class="layui-elem-quote">联系人列表</blockquote>
+				<br>
 				<el-table :data="tableData" stripe border :row-class-name="tableRowClassName" style="width: 100%">
 					<el-table-column prop="name" label="第一联系人姓名">
 					</el-table-column>
@@ -37,27 +52,82 @@
 					<el-table-column prop="date" label="获息日期">
 					</el-table-column>
 				</el-table>
-				<br>		
-			<blockquote class="layui-elem-quote">贷款交易概要</blockquote><br>
+				<br>
+				<blockquote class="layui-elem-quote">贷款交易概要</blockquote>
+				<br>
 				<el-table :data="loadOutline" stripe border :row-class-name="tableRowClassName" style="width: 100%">
 					<el-table-column fixed="left" prop="title" label="标题">
 					</el-table-column>
 					<el-table-column fixed="left" prop="value" label="内容">
 					</el-table-column>
 				</el-table>
-			<br>
-			<blockquote class="layui-elem-quote">贷款交易概要2</blockquote><br>
-			<table class="mytable" border="1" cellspacing="0" cellpadding="0" style="width: 100%">
+				<br>
+				<blockquote class="layui-elem-quote">贷款交易概要2</blockquote>
+				<br>
+				<table class="mytable" border="1" cellspacing="0" cellpadding="0" style="width: 100%">
 					<tr v-for="(item,index) in loadOutline ">
-						<td class="el-table--border">{{item.title}}</td>
+						<td width="50%">{{item.title}}</td>
 						<td>{{item.value}}</td>
 					</tr>
-			</table>
+				</table>
+			</div>
 		</div>
-
 	</div>
+
+
+
+
 </body>
 <style>
+	.numberList {
+		font-size: 14px;
+		color: #333;
+		position: relative;
+		min-height: 60px;
+		padding: 10px 0;
+	}
+
+	.numberList dl {
+		width: 32%;
+		min-height: 30px;
+		list-style: none;
+		float: left;
+		position: relative;
+	}
+
+	.numberList dl dd,
+	.numberList dl dt {
+		font-size: 14px;
+		color: #333;
+	}
+
+	.suggestBox {
+		font-size: 14px;
+		color: #333;
+		position: relative;
+		padding: 10px 0;
+	}
+
+	.errFont {
+		color: red;
+		font-weight: bold;
+	}
+
+	.bigTitle {
+		font-size: 32px;
+		color: #333;
+		width: 100%;
+		/* font-weight: bold; */
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	.whiteBG {
+		width: 96%;
+		background-color: white;
+		padding: 10px 16px;
+	}
+
 	.mytable {
 		border-collapse: separate;
 		border-width: 1px;
@@ -86,11 +156,13 @@
 		border-left: #ebeef5 0px solid;
 		border-bottom: #ebeef5 1px solid;
 	}
-	.mytable tr:nth-child(even){
+
+	.mytable tr:nth-child(even) {
 		background-color: #f9f9f9
 	}
-	.mytable tr td:nth-child(odd){
-		color:#333;
+
+	.mytable tr td:nth-child(odd) {
+		color: #333;
 		font-weight: bold
 	}
 </style>
